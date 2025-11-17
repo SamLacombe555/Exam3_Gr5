@@ -31,10 +31,12 @@ def trouve_les_mots(phrase):
             mot += lettre
     return list_mots
 
+list_phrase = []
 list_deux_lettres = []
-for phrase in messages_gr5["messages"]:
 
+for phrase in messages_gr5["messages"]:
     list_mots = trouve_les_mots(phrase)
+    list_phrase.append(list_mots)
 
         nouveau_deux_lettres = trouver_deux_lettres(mot)
         list_deux_lettres.append(nouveau_deux_lettres)
