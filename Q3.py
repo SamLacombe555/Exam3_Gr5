@@ -15,27 +15,26 @@ def trouver_deux_lettres(mot):
         deux_lettres = str(f"{mot[-3]+mot[-2]}")
         return deux_lettres
 
-def trouve_les_mots(lettre, phrase):
+def trouve_les_mots(phrase):
     """
     Fonction qui prend un message et crée une liste de chacun de ses mots
-    :param lettre: une lettre du message
     :param phrase: la phrase contenant les mots
     :return: list contenant chaque mots du message
     """
     list_mots = []
-    while True:
-        for lettre in phrase:
-            mot = ""
-            if lettre == "":
-                list_mots.append(mot)
 
-            elif lettre != "":
-                mot += lettre
-
+    for lettre in phrase:
+        mot = ""
+        if lettre == "":
+            list_mots.append(mot)
+        else:
+            mot += lettre
+    return list_mots
 
 list_deux_lettres = []
 for phrase in messages_gr5["messages"]:
-    for lettre  in phrase:
+
+    list_mots = trouve_les_mots(phrase)
 
         nouveau_deux_lettres = trouver_deux_lettres(mot)
         list_deux_lettres.append(nouveau_deux_lettres)
