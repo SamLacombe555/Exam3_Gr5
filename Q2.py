@@ -11,6 +11,7 @@ def afficher_jours_examens(horaire_examen: dict) -> list[str]:
 
     # Réf. Notes de cours
     # https://projets420.gitbook.io/notes-de-cours/les-collections-de-donnees/les-dictionnaires
+    # https://projets420.gitbook.io/notes-de-cours/tests-unitaires/tests-unitaires
     jours = [] # déplacer hors de la fonction
     for classe, date_examen in horaire_examen.items():
         try:
