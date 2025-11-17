@@ -13,9 +13,16 @@ def afficher_jours_examens(horaire_examen: dict) -> list[str]:
     # https://projets420.gitbook.io/notes-de-cours/les-collections-de-donnees/les-dictionnaires
     jours = [] # déplacer hors de la fonction
     for classe, date_examen in horaire_examen.items():
-        date = datetime.strptime(horaire_examen[classe], "%d/%m/%Y") # La détection de la date était dans le mauvais format (c'était Y/m/d)
-        j = date.strftime("%a")
-        jours.append(j)
+        try:
+            date = datetime.strptime(horaire_examen[classe], "%d/%m/%Y") # La détection de la date était dans le mauvais format (c'était Y/m/d)
+            j = date.strftime("%a")
+            jours.append(j)
+        except ValueError:
+            jours.append("N/D")
+        except UnboundLocalError:
+            jours.append("N/D")
+
+
     return jours # déplacer tab
 
 if __name__ == '__main__':
