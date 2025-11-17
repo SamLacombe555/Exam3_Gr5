@@ -27,7 +27,7 @@ def afficher_jours_examens(horaire_examen: dict) -> list[str]:
 
 if __name__ == '__main__':
     horaire_examen = {
-        "math" : "10/12/2025", # l'année était inscrit à 2015
+        "math" : "10/12/2015",
         "anglais" : "12/12/2025",
         "français" : "15/12/2025"
     }

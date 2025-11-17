@@ -6,12 +6,12 @@ from Q2 import *
 
 def test_afficher_jours_examens_1():
     horaire_examen = {
-    "math": "10/12/2025",
+    "math": "10/12/2015",
     "anglais": "12/12/2025",
     "français": "15/12/2025"
     }
     resultat = afficher_jours_examens(horaire_examen)
-    assert resultat == ['mer.', 'ven.', 'lun.']
+    assert resultat == ['jeu.', 'ven.', 'lun.']
 
 
 def test_afficher_jours_examens_2():
