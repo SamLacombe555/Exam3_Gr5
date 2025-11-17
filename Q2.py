@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime #modifier le import
 import locale
 locale.setlocale(locale.LC_TIME,'')
 
@@ -8,16 +8,19 @@ def afficher_jours_examens(horaire_examen: dict) -> list[str]:
     :param horaire_examen: dictionnaire contenant les dates d'examens
     :return: une liste de jours de la semaine
     """
-    for i in range(len(horaire_examen)):
-        jours = []
-        date = datetime.datetime.strptime(horaire_examen[i], "%Y-%m-%d")
+
+    # Réf. Notes de cours
+    # https://projets420.gitbook.io/notes-de-cours/les-collections-de-donnees/les-dictionnaires
+    jours = [] # déplacer hors de la fonction
+    for classe, date_examen in horaire_examen.items():
+        date = datetime.strptime(horaire_examen[classe], "%d/%m/%Y") # La détection de la date était dans le mauvais format (c'était Y/m/d)
         j = date.strftime("%a")
         jours.append(j)
-        return jours
+    return jours # déplacer tab
 
 if __name__ == '__main__':
     horaire_examen = {
-        "math" : "10/12/2015",
+        "math" : "10/12/2025", # l'année était inscrit à 2015
         "anglais" : "12/12/2025",
         "français" : "15/12/2025"
     }
